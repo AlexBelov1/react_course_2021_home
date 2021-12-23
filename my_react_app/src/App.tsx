@@ -2,7 +2,7 @@ import React from "react";
 //import logo from "./logo.svg";
 import "./App.css";
 //import CardProduct from "./CardProduct";
-import Form from "./Form/index";
+import Form from "./Components";
 
 const App = () => {
   return (
