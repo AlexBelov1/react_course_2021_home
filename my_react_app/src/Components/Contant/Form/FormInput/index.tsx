@@ -1,25 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 
 type InputPropsType = {
   inputName: string;
   inputType: string;
+  inputValue: string;
+  changeInputValue: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const Input: React.FC<InputPropsType> = (props) => {
-  const { inputName, inputType } = props;
-  const [value, setValue] = useState(``);
-  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-    console.log(e.target.value);
-  };
+  const { inputName, inputType, inputValue, changeInputValue } = props;
+
   return (
     <div className="form_input">
       <span>{inputName}</span>
       <input
-        onChange={changeHandler}
+        onChange={(e: any) => changeInputValue(e.target.value)}
         placeholder={inputName}
         type={inputType}
-        value={value}
+        value={inputValue}
         id="form_input_id"
       />
     </div>

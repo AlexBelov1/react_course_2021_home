@@ -1,12 +1,15 @@
 import React from "react";
 import "./Footer.css";
 
-const Footer = () => {
+const Footer = (props: any) => {
+  const { changeUserName } = props;
   const sendData = () => {};
-  const clearForm = () => {};
+  // const clearForm = () => {
+  //   changeUserName("");
+  // };
   return (
     <div className="form_button">
-      <button onClick={clearForm} type="button" className="btn">
+      <button onClick={() => changeUserName("")} type="button" className="btn">
         Очистить форму
       </button>
       <button onClick={sendData} type="button" className="btn">
